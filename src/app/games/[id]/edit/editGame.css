@@ -1,0 +1,107 @@
+.page-edit {
+  background-color: #a37070;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  font-family: sans-serif;
+}
+.page {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  
+}
+.edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+.edit-header h2 {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.edit-form {
+  background-color: #a37070;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.image-preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.image-preview img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  background-color: #d69a9a;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.25rem 0;
+}
+
+.save-btn {
+  background-color: #22c55e;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+  background-color: #16a34a;
+}
+
+.loading {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
