@@ -6,6 +6,7 @@ import { useCreateGame } from "@/hooks/games/useGames";
 import { usePlatforms } from "@/hooks/platforms/usePlatform";
 import { useCategories } from "@/hooks/categories/useCategories";
 import "./createGame.css";
+import Swal from "sweetalert2";
 
 export default function CrearJuegoPage() {
   const router = useRouter();
@@ -39,14 +40,29 @@ export default function CrearJuegoPage() {
     data.append("year", formData.year);
     data.append("cover", formData.cover);
 
-    mutate(data, {
-      onSuccess: () => {
-        router.push("/games");
-      },
-      onError: () => {
-        alert("Error al crear el juego");
-      },
+mutate(data, {
+onSuccess: async () => {
+  await Swal.fire({
+    icon: "success",
+    title: "¡Juego creado!",
+    text: "El videojuego fue guardado exitosamente.",
+    timer: 2000,
+    showConfirmButton: false,
+    timerProgressBar: true,
+  });
+
+  router.push("/games");
+},
+
+  onError: () => {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Hubo un problema al crear el videojuego.",
     });
+  },
+});
+
   };
 
   return (
@@ -56,7 +72,7 @@ export default function CrearJuegoPage() {
           <button onClick={() => router.push("/games")} className="back-button">
             <img src="/arrow.png" width={20} height={25} />
           </button>
-          <h2 className="view-title">Consultar VideoJuego</h2>
+          <h2 className="view-title">Crear VideoJuego</h2>
           <button
             onClick={() => router.push("/games")}
             className="close-button"

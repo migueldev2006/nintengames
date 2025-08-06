@@ -6,6 +6,7 @@ import { useGameById, useUpdateGame } from "@/hooks/games/useGames";
 import { usePlatforms } from "@/hooks/platforms/usePlatform";
 import { useCategories } from "@/hooks/categories/useCategories";
 import "./editGame.css";
+import Swal from "sweetalert2";
 
 export default function EditarJuegoPage() {
   const { id } = useParams();
@@ -56,7 +57,16 @@ export default function EditarJuegoPage() {
     updateGame(
       { id, formData: data },
       {
-        onSuccess: () => router.push("/games"),
+        onSuccess: () => {
+          Swal.fire({
+          icon: "success",
+          title: "¡Juego actualizado!",
+          text: "Los cambios se guardaron correctamente.",
+          confirmButtonText: "Aceptar",
+        }).then(() => {
+          router.push("/games");
+        });
+        },
         onError: () => alert("Error al actualizar juego"),
       }
     );
@@ -71,7 +81,7 @@ export default function EditarJuegoPage() {
           <button onClick={() => router.push("/games")} className="back-button">
             <img src="/arrow.png" width={20} height={25} />
           </button>
-          <h2 className="view-title">Consultar VideoJuego</h2>
+          <h2 className="view-title">Editar VideoJuego</h2>
           <button
             onClick={() => router.push("/games")}
             className="close-button"

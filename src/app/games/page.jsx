@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useDeleteGame, useGames } from "@/hooks/games/useGames";
 import "./GamesPage.css";
 import { usePlatforms } from "@/hooks/platforms/usePlatform";
+import Swal from "sweetalert2";
 
 export default function GamesPage() {
   const router = useRouter();
@@ -19,6 +20,13 @@ export default function GamesPage() {
   }, []);
 
   const handleLogout = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Cerrando Sesion",
+      text: "Cerrando Sesion .....",
+      timer: 1000,
+      showConfirmButton: false,
+    });
     localStorage.removeItem("token");
     router.push("/");
   };
@@ -27,21 +35,43 @@ export default function GamesPage() {
   const handleView = (id) => router.push(`/games/${id}/view`);
   const handleEdit = (id) => router.push(`/games/${id}/edit`);
   const handleDelete = (id) => {
-    if (confirm(`¿Eliminar juego con ID ${id}?`)) {
-      setDeletingId(id);
-      deleteGame(id, {
-        onSuccess: () => {
-          console.log("Juego eliminado con éxito");
-        },
-        onError: (err) => {
-          alert("Error al eliminar el juego");
-          console.error(err);
-        },
-        onSettled: () => {
-          setDeletingId(null);
-        },
-      });
-    }
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: `¿Deseas eliminar el juego con ID ${id}?`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setDeletingId(id);
+
+        deleteGame(id, {
+          onSuccess: () => {
+            Swal.fire({
+              icon: "success",
+              title: "¡Eliminado!",
+              text: "El videojuego fue eliminado correctamente.",
+              timer: 2000,
+              showConfirmButton: false,
+            });
+          },
+          onError: (err) => {
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "No se pudo eliminar el videojuego.",
+            });
+            console.error(err);
+          },
+          onSettled: () => {
+            setDeletingId(null);
+          },
+        });
+      }
+    });
   };
 
   return (

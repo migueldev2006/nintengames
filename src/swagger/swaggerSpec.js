@@ -18,11 +18,6 @@ const options = {
         },
       },
     },
-    security: [
-      {
-        bearerAuth: [],
-      },
-    ],
   },
   apis: ['./src/swagger/docs/**/*.js'], // Tus archivos de documentación
 };

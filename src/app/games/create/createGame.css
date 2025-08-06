@@ -70,11 +70,15 @@
   border: none;
   font-size: 14px;
   color: #000000;
-  background-color: #ffffff;
+  background-color: #d69a9a;
+}
+
+.input-create::placeholder{
+  color: #000000;
 }
 
 .upload-wrapper {
-  background-color: #f3dcdc;
+  background-color: #d69a9a;
   border-radius: 0px;
   padding: 10px;
   display: flex;

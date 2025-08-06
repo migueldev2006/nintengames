@@ -7,7 +7,7 @@
 
 /**
  * @swagger
- * /api/login:
+ * /api/users/login:
  *   post:
  *     summary: Iniciar sesión
  *     tags: [Autenticación]
