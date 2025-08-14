@@ -27,3 +27,11 @@ DATABASE_URL="mysql://root:123@localhost:3306/nintengames"
 
 JWT_SECRET=123456
 
+
+finalmente para correr el proyecto debe ejecutar 
+```bash
+npm run dev
+```
+
+claramente antes de ejecutar el comando debe de haber ejecutado las migraciones.
+
