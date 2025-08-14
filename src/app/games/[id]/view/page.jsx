@@ -40,23 +40,23 @@ export default function ConsultarJuegoPage() {
       </div>
 
       <div className="info-item">
-        <span className="info-label">Título:</span>
-        <span className="info-value">{game.title}</span>
+        <span className="info-label-box">Título:</span>
+        <span className="info-value-box">{game.title}</span>
       </div>
 
       <div className="info-item">
-        <span className="info-label">Consola:</span>
-        <span className="info-value">{platformName}</span>
+        <span className="info-label-box">Consola:</span>
+        <span className="info-value-box">{platformName}</span>
       </div>
 
       <div className="info-item">
-        <span className="info-label">Categoría:</span>
-        <span className="info-value">{categoryName}</span>
+        <span className="info-label-box">Categoría:</span>
+        <span className="info-value-box">{categoryName}</span>
       </div>
 
       <div className="info-item">
-        <span className="info-label">Año:</span>
-        <span className="info-value">{game.year}</span>
+        <span className="info-label-box">Año:</span>
+        <span className="info-value-box">{game.year}</span>
       </div>
     </div>
   );

@@ -59,13 +59,13 @@ export default function EditarJuegoPage() {
       {
         onSuccess: () => {
           Swal.fire({
-          icon: "success",
-          title: "¡Juego actualizado!",
-          text: "Los cambios se guardaron correctamente.",
-          confirmButtonText: "Aceptar",
-        }).then(() => {
-          router.push("/games");
-        });
+            icon: "success",
+            title: "¡Juego actualizado!",
+            text: "Los cambios se guardaron correctamente.",
+            confirmButtonText: "Aceptar",
+          }).then(() => {
+            router.push("/games");
+          });
         },
         onError: () => alert("Error al actualizar juego"),
       }
@@ -111,8 +111,9 @@ export default function EditarJuegoPage() {
           />
 
           <div className="form-group">
-            <label>Título:</label>
+            <label className="info-label-box">Título:</label>
             <input
+              className="info-value-box"
               type="text"
               name="title"
               value={formData.title}
@@ -122,14 +123,17 @@ export default function EditarJuegoPage() {
           </div>
 
           <div className="form-group">
-            <label>Consola:</label>
+            <label className="info-label-box">Consola:</label>
             <select
+              className="info-value-box"
               name="platform"
               value={formData.platform}
               onChange={handleChange}
               required
             >
-              <option value="">Seleccione Consola...</option>
+              <option className="info-value-box" value="">
+                Seleccione Consola...
+              </option>
               {platforms?.map((p) => (
                 <option key={p.id} value={p.id}>
                   {p.name}
@@ -139,16 +143,19 @@ export default function EditarJuegoPage() {
           </div>
 
           <div className="form-group">
-            <label>Categoría:</label>
+            <label className="info-label-box">Categoría:</label>
             <select
+              className="info-value-box"
               name="category"
               value={formData.category}
               onChange={handleChange}
               required
             >
-              <option value="">Seleccione Categoría...</option>
+              <option className="info-value-box" value="">
+                Seleccione Categoría...
+              </option>
               {categories?.map((c) => (
-                <option key={c.id} value={c.id}>
+                <option className="info-value-box"  key={c.id} value={c.id}>
                   {c.name}
                 </option>
               ))}
@@ -156,8 +163,9 @@ export default function EditarJuegoPage() {
           </div>
 
           <div className="form-group">
-            <label>Año:</label>
+            <label className="info-label-box">Año:</label>
             <input
+              className="info-value-box"
               type="number"
               name="year"
               value={formData.year}

@@ -1,15 +1,14 @@
 .page-principal {
   background-color: #a37070;
   height: 100vh;
-  padding-top: 10%;
 }
 .page-create {
   background-color: #a37070;
-  border-radius: 30px;
+  border-radius: 5px;
   padding: 24px;
-  width: 330px;
-  height:600px;
-  margin: auto;
+  padding-bottom: 70px;
+  /* width: 330px;
+  height:600px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +26,21 @@
   margin-bottom: 16px;
 }
 
+.view-header {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
 .close-button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+.back-button {
   background: transparent;
   border: none;
   font-size: 20px;
@@ -65,7 +78,9 @@
 
 .input-create {
   width: 100%;
+  height: 50px;
   padding: 10px;
+  margin-bottom: 10px;
   border-radius: 20px;
   border: none;
   font-size: 14px;
@@ -73,7 +88,7 @@
   background-color: #d69a9a;
 }
 
-.input-create::placeholder{
+.input-create::placeholder {
   color: #000000;
 }
 
