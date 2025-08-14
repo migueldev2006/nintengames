@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+El siguiente apartado darems las indicaciones  necesarias para que el proyecto Nintengames corra con eficiencia
 
 ## Getting Started
 
-First, run the development server:
+Priemro debera clonar el proyecto
+
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/migueldev2006/nintengames.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+luego de clonado debera abrir el  proyecto y dar el siguiente comando para instalar las dependencias
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##o
 
-## Learn More
+npm install --force
+```
+el forzado es por si no se instala correctamanete con el primer comando
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+luego a la raiz del proyecto nintengames creamos el .env y añadimos lo siguiente
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+DATABASE_URL="mysql://root:123@localhost:3306/nintengames"
 
-## Deploy on Vercel
+JWT_SECRET=123456
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
