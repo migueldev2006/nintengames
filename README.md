@@ -23,7 +23,7 @@ el forzado es por si no se instala correctamanete con el primer comando
 
 luego a la raiz del proyecto nintengames creamos el .env y añadimos lo siguiente
 
-DATABASE_URL="mysql://root:123@localhost:3306/nintengames"
+DATABASE_URL="mysql://root:@localhost:3306/nintengames"
 
 JWT_SECRET=123456
 
